@@ -24,7 +24,7 @@ class Products(models.Model):
     rank = models.ForeignKey(Ranks, on_delete=models.CASCADE)
     status = models.ForeignKey(Statuses, on_delete= models.CASCADE)
     start_date = models.DateTimeField(default=timezone.now())
-    end_date = models.DateTimeField()
+    end_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.title
