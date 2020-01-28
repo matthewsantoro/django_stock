@@ -8,8 +8,14 @@ from django.utils import timezone
 class Statuses(models.Model):
     title = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
+
 class Ranks(models.Model):
     title = models.CharField(max_length=100)
+
+    def __str__(self):
+       return self.title
 
 class Products(models.Model):
     title =models.CharField(max_length=200)
