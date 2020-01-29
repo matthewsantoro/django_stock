@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <script scr="{% static 'js/core.js' %}"></script>
 </head>
+
 <body>
     <h2>
-        <h3>Google</h3>
+        <h1>Google</h1>
     </h2>
 </body>
 </html>
