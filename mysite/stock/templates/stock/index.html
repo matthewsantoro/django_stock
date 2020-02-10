@@ -1,17 +1,9 @@
-{% load static %}
+{% extends 'stock/base_stock.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <script scr="{% static 'js/core.js' %}"></script>
-</head>
+{% block title %}
+    таблица
+{% endblock title %}
 
-<body>
-    <h1>ff</h1>
-</body>
-</html>
+{% block content %}
+    <h1>hell</h1>   
+{% endblock content %}
