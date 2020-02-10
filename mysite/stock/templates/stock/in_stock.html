@@ -1,0 +1,30 @@
+{% extends 'stock/base_stock.html' %}
+
+{% block title %}
+    таблица
+{% endblock title %}
+
+{% block content %}
+<div class='col-8 mx-auto mt-4'>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Наиминование</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Описание</th>
+        <th scope="col">Стеллаж</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <th scope="row">{{product.title}}</th>
+        <td>{{product.count}}</td>
+        <td>{{product.desc}}</td>
+        <td>{{product.rank}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

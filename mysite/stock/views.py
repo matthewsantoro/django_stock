@@ -3,7 +3,7 @@ from django.views.generic import View
 from .models import  Products
 # Create your views here.
 
-class ProductList(View):
+class ProductInStock(View):
     def get(self,request):
-        product = Products.objects.all()
-        return render(request, 'stock/index.html', context={'product': product})
+        products = Products.objects.all()
+        return render(request, 'stock/in_stock.html', context={'products': products})

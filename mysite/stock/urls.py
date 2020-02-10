@@ -1,5 +1,5 @@
 from django.urls import path
 from .views import *
 urlpatterns = [
-    path('', ProductList.as_view()  , name='index'),
+    path('', ProductInStock.as_view()  , name='index'),
 ]
