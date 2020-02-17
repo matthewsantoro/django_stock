@@ -36,9 +36,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="\">На складе <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="discarded">Списанные</a>
-        <a class="nav-item nav-link" href="delivered">Выданные</a>
+        <a class="nav-item nav-link active" href="{% url 'product_in_stock_url' %}">На складе <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{% url 'product_discarded_url' %}">Списанные</a>
+        <a class="nav-item nav-link" href="{% url 'product_delivered_url' %}">Выданные</a>
       </div>
     </div>
   </nav>

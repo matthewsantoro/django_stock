@@ -19,7 +19,7 @@
     <tbody>
       {% for product in products %}
       <tr>
-        <th scope="row">{{product.title}}</th>
+        <th scope="row"><a href="{% url 'product_detail_url' product_id=product.id %}">{{product.title}}</a></th>
         <td>{{product.count}}</td>
         <td>{{product.desc}}</td>
         <td>{{product.rank}}</td>

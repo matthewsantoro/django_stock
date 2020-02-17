@@ -1,0 +1,34 @@
+{% extends 'stock/base_stock.html' %}
+
+{% block title %}
+Детали
+{% endblock title %}
+
+{% block content %}
+
+<h2>Детали</h2>
+<a href="../ff">Выписать</a> <a href="#">Списать</a>
+<table>
+    <tr>
+        <td>Название:</td>
+        <td>{{product.title}}</td>
+    </tr>
+    <tr>
+        <td>Количесво:</td>
+        <td>{{product.count}} </td>
+    </tr>
+    <tr>
+        <td>Описание:</td>
+        <td>{{product.desc}}</td>
+    </tr>
+    <tr>
+        <td>Стеллаж:</td>
+        <td>{{product.rank}}</td>
+    </tr>
+    <tr>
+        <td>Статус:</td>
+        <td>{{product.status}}</td>
+    </tr>
+</table>
+
+{% endblock content %}

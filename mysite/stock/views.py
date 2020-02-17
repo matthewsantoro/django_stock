@@ -1,25 +1,31 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+
 from django.views.generic import View
-from .models import Products
+from .models import Product
 # Create your views here.
 
 
 class ProductInStock(View):
     def get(self, request):
-        products = Products.objects.filter(status=1)
-        table_name = 'На складе'
-        return render(request, 'stock/products.html', context={'products': products, 'table_name': table_name})
+        products = Product.objects.filter(status=1)
+        return render(request, 'stock/products.html', context={'products': products})
 
 
 class ProductDiscarded(View):
     def get(self, request):
-        table_name = 'Списан'
-        products = Products.objects.filter(status=2)
-        return render(request, 'stock/products.html', context={'products': products})
+        products = Product.objects.filter(status=2)
+        return render(request, 'stock/products_discarded.html', context={'products': products})
 
 
 class ProductdDelivered(View):
     def get(self, request):
-        table_name = 'Выдан'
-        products = Products.objects.filter(status=3)
-        return render(request, 'stock/products.html', context={'products': products})
+        products = Product.objects.filter(status=3)
+        return render(request, 'stock/products_delivered.html', context={'products': products})
+
+
+
+class ProductDetail(View):
+    def get(self, request,product_id):
+        product = get_object_or_404(Product, id = product_id)
+        return render(request, 'stock/product_detail.html',context={'product': product})
