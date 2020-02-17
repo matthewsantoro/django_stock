@@ -1,0 +1,31 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h2>{{ product.title }}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+
+        <div class="product-info">
+            
+            <table>
+                <tr>
+                    <td>Количесво:</td>
+                    <td>{{product.count}} </td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td>{{product.desc}}</td>
+                </tr>
+                <tr>
+                    <td>Стеллаж:</td>
+                    <td>{{product.rank}}</td>
+                </tr>
+                <tr>
+                    <td>Статус:</td>
+                    <td>{{product.status}}</td>
+                </tr>
+            </table>
+        </div><!-- .product-info -->
+    </div><!-- .modal-body -->
+</div><!-- .modal-content -->

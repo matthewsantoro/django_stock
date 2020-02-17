@@ -1,13 +1,13 @@
 {% extends 'stock/base_stock.html' %}
 
 {% block title %}
-    таблица
+таблица
 {% endblock title %}
 
 {% block content %}
 <div class='col-8 mx-auto mt-4'>
   <h1 class='mt-4'>{{table_name}}</h1>
-<table class="table table-striped">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Наиминование</th>
@@ -19,7 +19,9 @@
     <tbody>
       {% for product in products %}
       <tr>
-        <th scope="row"><a href="{% url 'product_detail_url' product_id=product.id %}">{{product.title}}</a></th>
+        
+        <th scope="row"><a href="" class="modal-view" data-toggle="modal" data-target="#productModal"
+          data-url="{% url 'modal_product_detail_url' product_id=product.id %}">{{product.title}}</a></th>
         <td>{{product.count}}</td>
         <td>{{product.desc}}</td>
         <td>{{product.rank}}</td>
@@ -28,4 +30,27 @@
     </tbody>
   </table>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-product"></div>
+  </div><!-- .modal-dialog -->
+</div>
+
+<script>
+  $('#productModal').on('show.bs.modal', function (event) {
+    
+    let button = $(event.relatedTarget);
+    let url = button.data('url');
+    let container = $(this).find('.modal-product');
+    container.html('');
+    $.ajax({
+      url: url,
+    }).done(function (data) {
+      container.html(data);
+    });
+  }); 
+</script>
+<!-- END Modal -->
 {% endblock content %}
