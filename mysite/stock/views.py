@@ -24,8 +24,14 @@ class ProductdDelivered(View):
         return render(request, 'stock/products_delivered.html', context={'products': products})
 
 
-
 class ProductDetail(View):
-    def get(self, request,product_id):
-        product = get_object_or_404(Product, id = product_id)
-        return render(request, 'stock/product_detail.html',context={'product': product})
+    def get(self, request, product_id):
+        product = get_object_or_404(Product, id=product_id)
+        return render(request, 'stock/product_detail.html', context={'product': product})
+
+
+class ModalProductDetail(View):
+    def get(self, request, product_id):
+        product = get_object_or_404(Product, id=product_id)
+        return render(request, 'stock/modal_product_detail', context={'product': product})
+        
